@@ -1,6 +1,8 @@
+import style from "./Footer.module.css";
+
 export const Footer = () => {
   return (
-    <footer>
+    <footer className={style.footer}>
       <div className="section-container">
         &copy; 2023 My Stylish LP. All rights reserved.
       </div>

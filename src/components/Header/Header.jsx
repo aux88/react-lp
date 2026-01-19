@@ -1,11 +1,35 @@
+import styles from "./Header.module.css";
+import React, { useState, useEffect } from "react";
+
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (isOpen && document.body.clientWidth > 768) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isOpen]);
+
   return (
     <header>
-      <div className="header-container">
-        <div className="logo">My Stylish LP</div>
+      <div className={styles.headerContainer}>
+        <div className={styles.logo}>My Stylish LP</div>
         <nav>
-          <div className="hamburger">☰</div>
-          <ul className="nav-links">
+          <div className={styles.hamburger} onClick={toggleMenu}>
+            {`${isOpen ? "×" : "☰"}`}
+          </div>
+          <ul className={`${styles.navLinks} ${isOpen ? styles.active : ""}`}>
             <li>
               <a href="#hero">ホーム</a>
             </li>

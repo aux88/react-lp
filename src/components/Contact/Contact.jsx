@@ -1,6 +1,8 @@
+import style from "./Contact.module.css";
+
 export const Contact = () => {
   return (
-    <section id="contact">
+    <section id="contact" className={style.contact}>
       <div className="section-container">
         <h2>お問い合わせ</h2>
         <form>
