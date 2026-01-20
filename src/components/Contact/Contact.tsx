@@ -1,6 +1,13 @@
 import style from "./Contact.module.css";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useState } from "react";
+
+interface FormInput {
+  name: string;
+  email: string;
+  phone?: string;
+  message?: string;
+}
 
 export const Contact = () => {
   const {
@@ -8,9 +15,9 @@ export const Contact = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm<FormInput>();
 
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<FormInput> = (data) => {
     // フォームのデータを処理します
     console.log(data);
     setIsSuccess(true);
