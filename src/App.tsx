@@ -1,28 +1,22 @@
-import "./App.css";
-import { Contact } from "./components/Contact/Contact";
-import { Features } from "./components/Features/Features";
-import { Footer } from "./components/Footer/Footer";
-import { Header } from "./components/Header/Header";
-import { Hero } from "./components/Hero/Hero";
-import { Testimonials } from "./components/Testimonials/Testimonials";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './components/pages/Home/Home';
+import { About } from './components/pages/About/About';
+import { Page404 } from './components/pages/Page404/Page404';
+import { Header } from './components/Header/Header';
+import { ScrollToHash } from './components/pages/ScrollToHash';
 
 function App() {
+
   return (
-    <>
+    <Router>
+      <ScrollToHash />
       <Header />
-      <main>
-        <Hero
-          title="新しい体験をあなたに"
-          subtitle="革新的な製品で、あなたの日常をより豊かに、より便利に。"
-          ctaLink="#contact"
-          ctaText="今すぐ体験する"
-        />
-        <Features />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Page404 />} />
+      </Routes>
+    </Router>
   );
 }
 

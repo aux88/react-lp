@@ -1,0 +1,30 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg,
+            var(--primary-color),
+            var(--secondary-color));
+    padding: 8rem 0;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    height: 100vh;
+}
+
+.about h1 {
+    color: #444;
+}
+
+.about p {
+    padding-bottom: 2rem;
+}
+
+.container {
+    background-color: #fff;
+    color: #666;
+    width: 80%;
+    max-width: 800px;
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    margin-top: 100px;
+}

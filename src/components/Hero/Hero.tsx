@@ -1,3 +1,4 @@
+import { memo } from "react";
 import style from "./Hero.module.css";
 
 const DEFAULT_TITLE: string = "新しい体験をあなたに";
@@ -13,12 +14,13 @@ interface HeroProps {
   ctaLink?: string;
 }
 
-export const Hero = ({
+export const Hero = memo(({
   title = DEFAULT_TITLE,
   subtitle = DEFAULT_SUBTITLE,
   ctaText = DEFAULT_CTA_TEXT,
   ctaLink = DEFAULT_CTA_LINK,
   }: HeroProps) => {
+
   return (
     <section id="hero" className={style.hero}>
       <div className="section-container">
@@ -30,4 +32,4 @@ export const Hero = ({
       </div>
     </section>
   );
-};
+});

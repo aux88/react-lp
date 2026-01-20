@@ -1,6 +1,6 @@
 import style from "./Contact.module.css";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useState } from "react";
+import { memo, useState } from "react";
 
 interface FormInput {
   name: string;
@@ -9,7 +9,8 @@ interface FormInput {
   message?: string;
 }
 
-export const Contact = () => {
+export const Contact = memo(() => {
+
   const {
     register,
     handleSubmit,
@@ -74,4 +75,4 @@ export const Contact = () => {
       </div>
     </section>
   );
-};
+});

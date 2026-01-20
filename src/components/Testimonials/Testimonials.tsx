@@ -1,6 +1,7 @@
+import { memo } from "react";
 import style from "./Testimonials.module.css";
 
-export const Testimonials = () => {
+export const Testimonials = memo(() => {
   return (
     <section id="testimonials">
       <div className="section-container">
@@ -26,4 +27,4 @@ export const Testimonials = () => {
       </div>
     </section>
   );
-};
+});

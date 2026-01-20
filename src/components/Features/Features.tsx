@@ -1,6 +1,7 @@
+import { memo } from "react";
 import style from "./Features.module.css";
 
-export const Features = () => {
+export const Features = memo(() => {
   return (
     <section id="features">
       <div className="section-container">
@@ -29,4 +30,4 @@ export const Features = () => {
       </div>
     </section>
   );
-};
+});

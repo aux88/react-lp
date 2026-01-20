@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +22,10 @@ export const Header = () => {
     };
   }, [isOpen]);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <header>
       <div className={styles.headerContainer}>
@@ -31,16 +36,19 @@ export const Header = () => {
           </div>
           <ul className={`${styles.navLinks} ${isOpen ? styles.active : ""}`}>
             <li>
-              <a href="#hero">ホーム</a>
+              <Link to="/" onClick={scrollToTop}>ホーム</Link>
             </li>
             <li>
-              <a href="#features">特徴</a>
+              <Link to="/about">私たちについて</Link>
             </li>
             <li>
-              <a href="#testimonials">お客様の声</a>
+              <Link to="/#features">特徴</Link>
             </li>
             <li>
-              <a href="#contact">お問い合わせ</a>
+              <Link to="/#testimonials">お客様の声</Link>
+            </li>
+            <li>
+              <Link to="/#contact">お問い合わせ</Link>
             </li>
           </ul>
         </nav>
