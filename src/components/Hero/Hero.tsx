@@ -1,5 +1,5 @@
 import { memo } from "react";
-import style from "./Hero.module.css";
+import styles from "./Hero.module.css";
 
 const DEFAULT_TITLE: string = "新しい体験をあなたに";
 const DEFAULT_SUBTITLE: string  =
@@ -22,11 +22,11 @@ export const Hero = memo(({
   }: HeroProps) => {
 
   return (
-    <section id="hero" className={style.hero}>
+    <section id="hero" className={styles.hero}>
       <div className="section-container">
         <h1>{title}</h1>
         <p>{subtitle}</p>
-        <a href={ctaLink} className={style.ctaButton}>
+        <a href={ctaLink} className={styles.ctaButton}>
           {ctaText}
         </a>
       </div>

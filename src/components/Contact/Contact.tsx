@@ -1,4 +1,4 @@
-import style from "./Contact.module.css";
+import styles from "./Contact.module.css";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { memo, useState } from "react";
 
@@ -28,11 +28,11 @@ export const Contact = memo(() => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   return (
-    <section id="contact" className={style.contact}>
+    <section id="contact" className={styles.contact}>
       <div className="section-container">
         <h2>お問い合わせ</h2>
         {isSuccess && (
-          <p className={style.successMessage}>お問い合わせが送信されました。</p>
+          <p className={styles.successMessage}>お問い合わせが送信されました。</p>
         )}
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
@@ -42,7 +42,7 @@ export const Contact = memo(() => {
             })}
           />
           {errors.name && (
-            <p className={style.validationErrorText}>{errors.name.message}</p>
+            <p className={styles.validationErrorText}>{errors.name.message}</p>
           )}
           <input
             placeholder="メールアドレス"
@@ -55,7 +55,7 @@ export const Contact = memo(() => {
             })}
           />
           {errors.email && (
-            <p className={style.validationErrorText}>{errors.email.message}</p>
+            <p className={styles.validationErrorText}>{errors.email.message}</p>
           )}
           <input
             placeholder="電話番号"
@@ -67,7 +67,7 @@ export const Contact = memo(() => {
             })}
           />
           {errors.phone && (
-            <p className={style.validationErrorText}>{errors.phone.message}</p>
+            <p className={styles.validationErrorText}>{errors.phone.message}</p>
           )}
           <textarea placeholder="メッセージ"></textarea>
           <button type="submit">送信する</button>

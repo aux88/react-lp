@@ -1,4 +1,4 @@
-import style from "./Button.module.css";
+import styles from "./Button.module.css";
 import { ReactNode } from "react"
 import { Link } from "react-router-dom";
 
@@ -8,5 +8,5 @@ interface ButtonProps {
 }
 
 export const Button = ({path,children}:ButtonProps) => {
-    return (<Link to={path} className={style.linkButton}>{children}</Link>)
+    return (<Link to={path} className={styles.linkButton}>{children}</Link>)
 }
