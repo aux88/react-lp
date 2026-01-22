@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

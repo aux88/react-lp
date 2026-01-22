@@ -1,5 +1,3 @@
-
-import "../../../App.css";
 import { Contact } from "../../Contact/Contact";
 import { Features } from "../../Features/Features";
 import { Footer } from "../../Footer/Footer";
